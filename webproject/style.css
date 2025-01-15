@@ -1,0 +1,163 @@
+/* Reset and Body Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+#app {
+  position: relative;
+}
+
+/* Hero Section */
+.hero-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.hero-section h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.hero-section p {
+  font-size: 1.5rem;
+  max-width: 600px;
+}
+
+/* Full-Screen Sections */
+.scroll-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Floating Images */
+.floating-images {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1; /* Ensure they float above content */
+}
+
+.float-image {
+  position: absolute;
+  width: 150px;
+  opacity: 0.8;
+  transition: transform 5s ease; /* Smooth floating transition */
+}
+
+
+/* Floating Animations */
+@keyframes float {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(30px, -40px); }
+  50% { transform: translate(-40px, 30px); }
+  75% { transform: translate(20px, -30px); }
+  100% { transform: translate(0, 0); }
+}
+
+
+.plant-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 1000;
+}
+
+.plant-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  border-radius: 1rem;
+  padding: 1rem;
+  width: 220px;
+  display: flex;
+  gap: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform-origin: right bottom;
+  animation: slideIn 0.5s ease forwards;
+  transition: transform 0.3s ease;
+}
+
+.plant-card:hover {
+  transform: scale(1.05);
+}
+
+.plant-image, .plant-image-placeholder {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.plant-image-placeholder {
+  background: #e0f2e9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.plant-info {
+  flex: 1;
+}
+
+.plant-info h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #2d3748;
+}
+
+.scientific-name {
+  margin: 0.25rem 0;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #4a5568;
+}
+
+.plant-cycle {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: #e0f2e9;
+  color: #2f855a;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
